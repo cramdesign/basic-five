@@ -1,0 +1,489 @@
+/* Cram Base CSS 1.07
+-------------------------------------------------------------- */
+
+
+/* Eric Meyer's Reset CSS v2.0
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0} article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+-------------------------------------------------------------- */
+
+
+body {
+	background: #fff;
+}
+
+
+
+/* The good box model
+-------------------------------------------------------------- */
+*,
+*:after,
+*:before {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	text-rendering:optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
+/* Make images sorta responsive
+-------------------------------------------------------------- */
+img { max-width: 100%; height: auto; vertical-align: bottom; }
+
+
+
+/* Nicolas Gallagher's micro clearfix
+-------------------------------------------------------------- */
+.row { width: 80%; max-width: 1200px; margin: 0 auto; }
+.row:before, .row:after, .clear:before, .clear:after, .grid:before, .grid:after { content:""; display:table; }
+.row:after, .clear:after, .grid:after { clear: both; }
+.row, .clear, .grid { zoom: 1; position: relative; }
+.row .row { width: auto; max-width: none; }
+
+@media (min-width:1024px) {
+
+	.wide .row, .wide.row { max-width: none; width: auto; margin: 0 3em; }
+
+}/* end @media */
+
+@media (max-width:1024px) {
+
+	.row { width: 88%; }
+
+}/* end @media */
+
+
+
+/* Simple Resposive Grid 
+-------------------------------------------------------------- */
+
+.grid {
+	margin: 0;
+}
+
+.grid .item {
+	padding: 1em 0;
+}
+
+.grid .item figure img {
+	width: 100%;
+}
+
+.grid .item > a {
+	display: block;
+}
+
+.grid.mobile {
+	margin: 0 -1em;
+}
+
+.grid.mobile .item {
+	width: 50%;
+	float: left;
+	padding: 1em;	
+}
+
+@media (min-width:480px) {
+
+	.grid {
+		margin: 0 -1em;
+	}
+	
+	.grid .item {
+		padding: 1em;
+		width: 50%;
+		float: left;
+	}
+	
+	.grid.one .item {
+		width: 100%;
+	}
+	
+}/* end @media */
+
+@media (max-width:767px) {
+
+	.grid.mobile .item:nth-child(2n+1) {
+		clear: left;
+	}
+	
+}/* end @media */
+
+@media (min-width:480px) and (max-width:767px) {
+
+	.grid .item:nth-child(2n+1) {
+		clear: left;
+	}
+	
+}/* end @media */
+
+@media (min-width: 768px) {
+
+	.grid.two {
+		margin: 0 -3em;
+	}
+	
+	.grid.two .item {
+		padding: 2em 3em;
+	}
+
+	.grid.three .item {
+		width: 33.333%;
+	}
+	
+	.grid.four .item {
+		width: 25%;
+	}
+	
+	.grid.five .item {
+		width: 20%;
+	}
+	
+	.grid.six .item {
+		width: 16.666%;
+	}
+	
+	.grid.two .item:nth-child(2n+1),
+	.grid.three .item:nth-child(3n+1),
+	.grid.four .item:nth-child(4n+1),
+	.grid.five .item:nth-child(5n+1),
+	.grid.six .item:nth-child(6n+1) {
+		clear: left;
+	}
+	
+}/* end @media */
+
+[class*='gallery'].grid .item a {
+	box-shadow: 0 0 3px rgba(0,0,0,0.05);
+}
+
+[class*='gallery'] img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+/* Slats 
+-------------------------------------------------------------- */
+
+.slats .item {
+	padding: 1em;
+	margin: 0 -1em;
+}
+
+.slats .item figure img {
+	width: 100%;
+}
+
+@media (min-width:600px) {
+
+	.slats .item {
+		padding: 2em;
+		margin: 0 -2em;
+		overflow: hidden;
+	}
+	
+	.slats .item figure {
+		width: 45%;
+		float: left;
+		margin-right: 2em;
+	}
+	
+	.slats .item article {
+		padding-top: 0;
+		overflow: hidden;
+	}
+	
+	.slats .item article:first-child {
+		background: #fafafa;
+		border-bottom: 1px solid #ddd;
+		padding: 2em;
+	}
+	
+}/* end @media */
+
+@media (min-width: 980px) {
+
+	.slats .item figure {
+		width: 30%;
+		margin-right: 3em;
+	}
+	
+}/* end @media */
+
+
+
+/* basic menu code 1.0
+-------------------------------------------------------------- */
+.dropmenu, .dropmenu ul, .menu, .menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.dropmenu li, .menu li {
+	margin: 0;
+	display: inline-block;
+	background: transparent;
+	position: relative;
+}
+
+.dropmenu li a {
+	text-decoration: none;
+	display: block;
+	padding: 0.75em 1em;
+	white-space: nowrap;
+}
+
+.dropmenu li, .dropmenu li a {
+	color: #777;
+	text-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.dropmenu li ul {
+	background: #fff;
+	display: none;
+	position: absolute;
+	left: 0; top: 100%;
+	box-shadow: 0 0 3px rgba(0,0,0,0.1);
+	z-index: 999;
+}
+
+.dropmenu li ul li {
+	display: block;
+}
+
+.dropmenu li ul li ul {
+	left: 100%; top: 0;
+}
+
+.dropmenu li:hover {
+	background: #ddd;
+	background: rgba(0,0,0,0.125);
+}
+
+.dropmenu li:hover > ul {
+	display: block;
+}
+
+@media (min-width:600px) {
+
+	.dropmenu li.dir > a:after {
+		content: ' +';
+	}
+
+}/* end @media */
+
+@media (max-width:599px) {
+
+	.dropmenu {
+		background: #fff;
+	}
+	
+	.dropmenu li {
+		background: rgba(0,0,0,0.1);
+		margin-bottom: 1px;
+		overflow: hidden;
+		font-weight: bold;
+	}
+	
+	.dropmenu li ul {
+		background: none;
+		margin-bottom: 1em;
+		box-shadow: none;
+		position: static;
+	}
+	
+	.dropmenu li ul li {
+		background: none;
+		font-weight: normal;
+	}
+	
+	.dropmenu li ul li a {
+		padding: 0.25em 1em;
+	}
+	
+	.dropmenu li ul li a:before {
+		content: '\2022\00a0';
+	}
+
+	.dropmenu li, .dropmenu li ul {
+		display: block;
+	}
+	
+}/* end @media */
+
+
+/* toggle
+-------------------------------------------------------------- */
+
+.toggle {
+	display: none;
+	cursor: default;
+}
+
+@media (max-width:599px) {
+
+	.toggle {
+		display: block;
+	}
+	
+	.menu-toggle.open {
+		border-bottom: 1px solid #999;
+	}
+	
+	.menu-toggle.open:before {
+		content: "Close "
+	}
+	
+	.toggle-this {
+		display: none;
+	}
+	
+	.toggle-this.open {
+		display: block;
+	}
+
+}/* end @media */
+
+.menu-toggle {
+	text-transform: uppercase;
+	font-size: 0.75em;
+	font-weight: 800;
+	color: #666;
+	padding: 1.5em;
+	margin: 0;
+	text-align: center;
+}
+
+
+
+/* Search Form
+-------------------------------------------------------------- */
+.searchform {
+    padding: 0 2.5em 0 0;
+    overflow: hidden;
+    position: relative;
+	background: #eee;
+}
+
+.searchform label {
+    display: none;
+}
+
+.searchform input[type=text] {
+    margin: 0;
+    width: 100%; 
+}
+
+.searchform input[type=submit] {
+    position: absolute;
+    top: 0; right: 0;
+    background-image: url(images/search.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -999em;
+    width: 2.5em; height: 100%;
+}
+
+/* gallery shortcode styles
+.gallery {
+    margin: 0 -0.5em 1em;
+    overflow: hidden;
+}
+.gallery-item {
+    float: left;
+    padding: 0.5em;
+    margin: 0;
+}
+.gallery .gallery-caption {
+}
+.gallery-columns-1 .gallery-item {
+    width: 100%;
+    float: none;
+}
+.gallery-columns-2 .gallery-item {
+    width: 50%
+}
+.gallery-columns-3 .gallery-item {
+    width: 33.3333%
+}
+.gallery-columns-4 .gallery-item {
+    width: 25%
+}
+.gallery-columns-5 .gallery-item {
+    width: 20%
+}
+.gallery-columns-6 .gallery-item {
+    width: 16.6667%
+}
+.gallery-columns-7 .gallery-item {
+    width: 14.2857%
+}
+.gallery-columns-8 .gallery-item {
+    width: 12.5%
+}
+.gallery br {
+	display: none;
+}
+-------------------------------------------------------------- */
+
+
+/*------------------------------------*\
+    PRINT
+\*------------------------------------*/
+
+@media print {
+	* {
+		background:transparent !important;
+		color:#000 !important;
+		box-shadow:none !important;
+		text-shadow:none !important;
+	}
+	a, a:visited {
+		text-decoration:underline;
+	}
+	a[href]:after {
+		content:" (" attr(href) ")";
+	}
+	abbr[title]:after {
+		content:" (" attr(title) ")";
+	}
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content:"";
+	}
+	pre,blockquote {
+		border:1px solid #999;
+		page-break-inside:avoid;
+	}
+	thead {
+		display:table-header-group;
+	}
+	tr,img {
+		page-break-inside:avoid;
+	}
+	img {
+		max-width:100% !important;
+	}
+	@page {
+		margin:0.5cm;
+	}
+	p, h2, h3 {
+		orphans:3;
+		widows:3;
+	}
+	h2, h3 {
+		page-break-after:avoid;
+	}
+} /* end @media */
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* the end of base styles
+/*-----------------------------------------------------------------------------------*/
