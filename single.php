@@ -18,7 +18,7 @@
 
 <?php endwhile; ?>
 
-	<?php get_template_part( 'inc/pagination' ); ?>
+				<?php comments_template( '', true ); ?>
 
 <?php else : ?>
 

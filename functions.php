@@ -78,8 +78,8 @@ if (!function_exists('theme_scripts')) : function theme_scripts() {
 
 
 	// Scripts
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'menu', get_template_directory_uri() . '/js/toggle.js', array('jquery') );
+	//wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'menu', get_template_directory_uri() . '/js/toggle.js', null, false, true );
 	if ( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' );
 	
 	
@@ -107,10 +107,6 @@ if (!function_exists('gallery_scripts')) : function gallery_scripts() {
 		// magnific lightbox
 		wp_enqueue_script( 'magnific-js', get_template_directory_uri() . '/js/magnific/magnific.js', array('jquery') );
 		wp_enqueue_style( 'magnific', get_template_directory_uri() . '/js/magnific/magnific.css' );
-		
-	}
-	
-	if ( is_singular() && has_shortcode( $post->post_content, 'gallery' ) ) {
 		
 		// owl carousel
 		wp_enqueue_script( 'owl-js', get_template_directory_uri() . '/js/owl/owl.carousel.min.js', array('jquery') );
@@ -309,6 +305,18 @@ function my_post_gallery( $output, $attr) {
 			$class = "grid six";
 			break;
 			
+		case "7":
+			$class = "grid seven";
+			break;
+			
+		case "8":
+			$class = "grid eight";
+			break;
+			
+		case "9":
+			$class = "grid nine";
+			break;
+			
 		default:
 			$class = "grid three";
 		
@@ -335,7 +343,7 @@ function my_post_gallery( $output, $attr) {
         $output .= "<figure class='gallery-icon'>$figure</figure>";
         
         if ( $cap ) {
-            $output .= "<figcaption class='gallery-caption'>" . $cap . "</figcaption>";
+            //$output .= "<figcaption class='gallery-caption'>" . $cap . "</figcaption>";
         }
         
         $output .= "</div>";

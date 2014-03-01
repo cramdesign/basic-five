@@ -45,11 +45,12 @@
 			setup_postdata( $pageChild ); 
 			
 			$children = get_pages('child_of='.$pageChild->ID);
+			$class = "item";
 			if( $children ) :
-				$class = "parent item";
+				$class .= " parent";
 				$count = count($children);
-			else :
-				$class = "item"; 
+			elseif( has_shortcode( $pageChild->post_content, 'gallery' ) ) :
+				$class .= " gallery"; 
 			endif;
 					
 			?>

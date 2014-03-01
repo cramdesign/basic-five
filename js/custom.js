@@ -3,27 +3,6 @@
 
 jQuery(document).ready(function($){
 
-	/*
-	// init magnific lightboxes
-	$('.lightbox .item a').magnificPopup({ 
-		type: 'image',
-		gallery: {
-			// options for gallery
-			enabled: true,
-			preload: [0,2]
-		},
-	});
-	
-	$('.gallery-item a').magnificPopup({ 
-		type: 'image',
-		gallery: {
-			// options for gallery
-			enabled: true,
-			preload: [0,2]
-		},
-	});
-	*/
-	
 	$('.gallery').each(function() { // the containers for all your galleries
 		$(this).magnificPopup({
 			delegate: '.item a', // the selector for gallery item
@@ -47,7 +26,9 @@ jQuery(document).ready(function($){
 		itemsDesktop : false,
 		itemsDesktopSmall : false,
 		itemsTablet: false,
-		itemsMobile : false
+		itemsMobile : false,
+		autoHeight : true,
+		addClassActive : true
 
 	});
 

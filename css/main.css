@@ -9,76 +9,25 @@
 }
 ------------------------------------------ */
 
-	/* Social menu */
-
-/* Menus */
-#menu-social li {
-	text-transform: uppercase;
-	font-size: 0.75em;
-}
-
-#menu-social li + li {
-	margin-left: 1em;
-}
-
-#menu-social li a:before {
-
-	display:        inline-block;
-	font-family:    'Genericons';
-	font-size:      18px;
-	font-style:     normal;
-	font-weight:    normal;
-	font-variant:   normal;
-	line-height:    1;
-	vertical-align: middle;
-
-	-webkit-font-smoothing: antialiased;
-	
-}
-
-#menu-social li a:before        { content: '\f408'; padding: 0 3px; }
-#menu-social li a:hover:before  { opacity: 0.75; }
-
-#menu-social li a[href*="codepen.io"]:before      { content: '\f216'; color: #999;    }
-#menu-social li a[href*="digg.com"]:before        { content: '\f221'; color: #999;    }
-#menu-social li a[href*="dribbble.com"]:before    { content: '\f201'; color: #ea4c89; }
-#menu-social li a[href*="facebook.com"]:before    { content: '\f203'; color: #3b5998; }
-#menu-social li a[href*="flickr.com"]:before      { content: '\f211'; color: #ff0084; }
-#menu-social li a[href*="plus.google.com"]:before { content: '\f206'; color: #dd4b39; }
-#menu-social li a[href*="github.com"]:before      { content: '\f200'; color: #4183c4; }
-#menu-social li a[href*="instagram.com"]:before   { content: '\f215'; color: #3f729b; }
-#menu-social li a[href*="linkedin.com"]:before    { content: '\f208'; color: #0e76a8; }
-#menu-social li a[href*="pinterest.com"]:before   { content: '\f210'; color: #c8232c; }
-#menu-social li a[href*="polldaddy.com"]:before   { content: '\f217'; color: #bc0b0b; }
-#menu-social li a[href*="getpocket.com"]:before   { content: '\f224'; color: #ee4056; }
-#menu-social li a[href*="reddit.com"]:before      { content: '\f222'; color: #336699; }
-#menu-social li a[href*="skype.com"]:before,
-#menu-social li a[href*="skype:"]:before          { content: '\f220'; color: #00aff0; }
-#menu-social li a[href*="stumbleupon.com"]:before { content: '\f223'; color: #ff2618; }
-#menu-social li a[href*="tumblr.com"]:before      { content: '\f214'; color: #34526f; }
-#menu-social li a[href*="twitter.com"]:before     { content: '\f202'; color: #33ccff; }
-#menu-social li a[href*="vimeo.com"]:before       { content: '\f212'; color: #1AB7EA; }
-#menu-social li a[href*="wordpress.org"]:before,
-#menu-social li a[href*="wordpress.com"]:before   { content: '\f205'; color: #21759b; }
-#menu-social li a[href*="youtube.com"]:before     { content: '\f213'; color: #c4302b; }
-
-
-
 /* Structures
 -------------------------------------------------------------- */
 body {
-	background: #fff;
+	background: #eee;
 }
 
 #page-wrap {
 }
 
 #header {
-	padding: 2em 0;
+	padding: 2em 0 0;
 }
 
 #menu {
-	background: rgba(0,0,0,0.2);
+	padding: 0 0 2em;
+/*
+	background: rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+*/
 }
 
 #feature {
@@ -90,7 +39,7 @@ body {
 }
 
 #content {
-	background: rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 #content section {
@@ -106,7 +55,7 @@ body {
 }
 
 #footer {
-	padding: 2em 0;
+	padding: 3em 0;
 	text-align: center;
 	opacity: 0.5;
 }
@@ -178,8 +127,16 @@ body {
 	font-size: 2.0em;
 }
 
+#tagline {
+}
+
 @media (min-width:600px) {
 
+	#menu {
+		text-transform: uppercase;
+		font-size: 0.875em;
+	}
+	
 	#menu {
 		text-align: center;
 	}
@@ -188,14 +145,6 @@ body {
 		text-align: left;
 	}
 	
-	#menu ul.dropmenu > li:first-child {
-		border-left: 1px solid #ddd;
-	}
-	
-	#menu ul.dropmenu > li {
-		border-right: 1px solid #ddd;
-	}
-
 }/* end @media */
 
 
@@ -228,6 +177,7 @@ body {
 	font-size: 0.75em;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	text-align: center;
 }
 
 .meta p {
@@ -317,6 +267,10 @@ body {
 	content: 		'\f460';
 }
 
+.post-gallery .gallery.item .icon:before {
+	content: 		'\f103';
+}
+
 #portfolio .item img {
 	width: 100%;
 }
@@ -324,3 +278,85 @@ body {
 figure.feature {
 	text-align: center;
 }
+
+
+
+.commentlist {
+	margin: 0;
+	padding: 0;
+}
+
+.commentlist .comment {
+	margin: 0;
+}
+
+.commentlist > .comment {
+	padding: 2em;
+	background: rgba(255,255,255,0.4);
+}
+
+.commentlist > .comment:nth-child(odd) {
+	background: rgba(255,255,255,0.6);
+}
+
+.form-allowed-tags {
+	display: none;
+}
+
+
+
+	/* Social menu */
+
+/* Menus */
+#menu-social li {
+	text-transform: uppercase;
+	font-size: 0.75em;
+}
+
+#menu-social li + li {
+	margin-left: 1em;
+}
+
+#menu-social li a:before {
+
+	display:        inline-block;
+	font-family:    'Genericons';
+	font-size:      18px;
+	font-style:     normal;
+	font-weight:    normal;
+	font-variant:   normal;
+	line-height:    1;
+	vertical-align: middle;
+
+	-webkit-font-smoothing: antialiased;
+	
+}
+
+#menu-social li a:before        { content: '\f408'; padding: 0 3px; }
+#menu-social li a:hover:before  { opacity: 0.75; }
+
+#menu-social li a[href*="codepen.io"]:before      { content: '\f216'; color: #999;    }
+#menu-social li a[href*="digg.com"]:before        { content: '\f221'; color: #999;    }
+#menu-social li a[href*="dribbble.com"]:before    { content: '\f201'; color: #ea4c89; }
+#menu-social li a[href*="facebook.com"]:before    { content: '\f203'; color: #3b5998; }
+#menu-social li a[href*="flickr.com"]:before      { content: '\f211'; color: #ff0084; }
+#menu-social li a[href*="plus.google.com"]:before { content: '\f206'; color: #dd4b39; }
+#menu-social li a[href*="github.com"]:before      { content: '\f200'; color: #4183c4; }
+#menu-social li a[href*="instagram.com"]:before   { content: '\f215'; color: #3f729b; }
+#menu-social li a[href*="linkedin.com"]:before    { content: '\f208'; color: #0e76a8; }
+#menu-social li a[href*="pinterest.com"]:before   { content: '\f210'; color: #c8232c; }
+#menu-social li a[href*="polldaddy.com"]:before   { content: '\f217'; color: #bc0b0b; }
+#menu-social li a[href*="getpocket.com"]:before   { content: '\f224'; color: #ee4056; }
+#menu-social li a[href*="reddit.com"]:before      { content: '\f222'; color: #336699; }
+#menu-social li a[href*="skype.com"]:before,
+#menu-social li a[href*="skype:"]:before          { content: '\f220'; color: #00aff0; }
+#menu-social li a[href*="stumbleupon.com"]:before { content: '\f223'; color: #ff2618; }
+#menu-social li a[href*="tumblr.com"]:before      { content: '\f214'; color: #34526f; }
+#menu-social li a[href*="twitter.com"]:before     { content: '\f202'; color: #33ccff; }
+#menu-social li a[href*="vimeo.com"]:before       { content: '\f212'; color: #1AB7EA; }
+#menu-social li a[href*="wordpress.org"]:before,
+#menu-social li a[href*="wordpress.com"]:before   { content: '\f205'; color: #21759b; }
+#menu-social li a[href*="youtube.com"]:before     { content: '\f213'; color: #c4302b; }
+
+
+

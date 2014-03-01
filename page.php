@@ -1,8 +1,6 @@
-<?php /* Template Name: Portfolio - Basic Page */ ?>
-
 <?php get_header(); ?>
 
-<!-- single-portfolio.php -->
+<!-- page-portfolio.php -->
 
 <div class="page portfolio">
 

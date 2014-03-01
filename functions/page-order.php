@@ -28,8 +28,7 @@ $parentID = 0;
 
 if (isset($_POST['btnSubPages'])) { 
 	$parentID = $_POST['pages'];
-}
-elseif (isset($_POST['hdnParentID'])) { 
+} elseif (isset($_POST['hdnParentID'])) { 
 	$parentID = $_POST['hdnParentID'];
 }
 
@@ -39,11 +38,13 @@ if (isset($_POST['btnReturnParent'])) {
 }
 
 $success = "";
+
 if (isset($_POST['btnOrderPages'])) { 
 	$success = mypageorder_updateOrder();
 }
 
 $subPageStr = mypageorder_getSubPages($parentID);
+
 ?>
 
 <div class='wrap'>
@@ -55,7 +56,7 @@ $subPageStr = mypageorder_getSubPages($parentID);
 	
 	<p>Choose a page from the drop down to order its subpages or order the pages on this level by dragging and dropping them into the desired order.</p>
 	
-	<?php if($subPageStr != "") : ?>
+	<?php if( $subPageStr != "" ) : ?>
 	
 		<h3>Sort Subpages</h3>
 		<select id="pages" name="pages"><?php echo $subPageStr; ?></select>
@@ -63,20 +64,26 @@ $subPageStr = mypageorder_getSubPages($parentID);
 	
 	<?php endif; ?>
 
-	<h3>Current Pages - <?php echo get_the_title( $parentID ); ?></h3>
+	<?php if( $parentID != "" ) : ?>
+
+		<h3>Current Pages - <?php echo get_the_title( $parentID ); ?></h3>
+
+	<?php endif; ?>
 	
 	<ul id="page_list">
 		<?php $results = mypageorder_pageQuery($parentID); ?>
-		<?php foreach($results as $row) : ?><li id="id_<?php echo $row->ID; ?>" class="menu-item">
+		<?php foreach($results as $li) : ?>
+		<li id="id_<?php echo $li->ID; ?>" class="menu-item">
         	<div class="item">
-				<div class="thumb"><?php echo get_the_post_thumbnail( $row->ID, array(35,35) ); ?></div>
-				<div class="title"><?php echo __($row->post_title); ?></div>
+				<div class="thumb"><?php echo get_the_post_thumbnail( $li->ID, array(35,35) ); ?></div>
+				<div class="title"><?php echo $li->post_title; ?></div>
         	</div>
-		</li><?php endforeach; ?>
+		</li>
+		<?php endforeach; ?>
 	</ul>
 
 	<input type="submit" name="btnOrderPages" id="btnOrderPages" class="button-primary" value="Save Page Order" onclick="javascript:orderPages(); return true;" />
-	<?php echo mypageorder_getParentLink($parentID); ?>
+	<?php echo mypageorder_getParentLink( $parentID ); ?>
 	<strong id="updateText"></strong>
 	<input type="hidden" id="hdnMyPageOrder" name="hdnMyPageOrder" />
 	<input type="hidden" id="hdnParentID" name="hdnParentID" value="<?php echo $parentID; ?>" />
@@ -95,11 +102,13 @@ $subPageStr = mypageorder_getSubPages($parentID);
 	background-color: #fff;
 }
 
-#page_list .menu-item {
+#page_list * {
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
+}
 
+#page_list .menu-item {
 	padding: 1em;
 	margin: 0;
 	width: 180px;
@@ -115,11 +124,7 @@ $subPageStr = mypageorder_getSubPages($parentID);
 	overflow: hidden;
 }
 
-#page_list .sortable-placeholder{ 
-	box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-
+#page_list .sortable-placeholder { 
 	display: inline-block;
 	width: 180px;
 	padding: 1em 0;
@@ -148,7 +153,7 @@ $subPageStr = mypageorder_getSubPages($parentID);
 }
 
 #page_list .title {
-	padding: 1em;
+	padding: 1em 0.5em;
 }
 
 </style>
@@ -186,8 +191,7 @@ function mypageorder_getTarget() {
 		return "edit-pages.php?page=mypageorder";
 }
 
-function mypageorder_updateOrder()
-{
+function mypageorder_updateOrder() {
 	if (isset($_POST['hdnMyPageOrder']) && $_POST['hdnMyPageOrder'] != "") { 
 		global $wpdb;
 
@@ -210,8 +214,7 @@ function mypageorder_updateOrder()
 	}
 }
 
-function mypageorder_getSubPages($parentID)
-{
+function mypageorder_getSubPages($parentID) {
 	global $wpdb;
 	
 	$subPageStr = "";
@@ -225,20 +228,17 @@ function mypageorder_getSubPages($parentID)
 	return $subPageStr;
 }
 
-function mypageorder_pageQuery($parentID)
-{
+function mypageorder_pageQuery($parentID) {
 	global $wpdb;
 	return $wpdb->get_results($wpdb->prepare("SELECT * FROM $wpdb->posts WHERE post_parent = %d and post_type = 'page' AND post_status != 'trash' AND post_status != 'auto-draft' ORDER BY menu_order ASC", $parentID) );
 }
 
-function mypageorder_getParentLink($parentID)
-{
+function mypageorder_getParentLink($parentID) {
 	if($parentID != 0)
 		return "<input type='submit' class='button' id='btnReturnParent' name='btnReturnParent' value='" . __('Return to parent page', 'mypageorder') ."' />";
 	else
 		return "";
 }
 
-/**/
 
 ?>

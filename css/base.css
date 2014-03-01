@@ -35,7 +35,7 @@ img { max-width: 100%; height: auto; vertical-align: bottom; }
 
 /* Nicolas Gallagher's micro clearfix
 -------------------------------------------------------------- */
-.row { width: 80%; max-width: 1200px; margin: 0 auto; }
+.row { width: 80%; max-width: 1000px; margin: 0 auto; }
 .row:before, .row:after, .clear:before, .clear:after, .grid:before, .grid:after { content:""; display:table; }
 .row:after, .clear:after, .grid:after { clear: both; }
 .row, .clear, .grid { zoom: 1; position: relative; }
@@ -74,14 +74,8 @@ img { max-width: 100%; height: auto; vertical-align: bottom; }
 	display: block;
 }
 
-.grid.mobile {
-	margin: 0 -1em;
-}
-
-.grid.mobile .item {
-	width: 50%;
-	float: left;
-	padding: 1em;	
+@media (max-width:480px) {
+	
 }
 
 @media (min-width:480px) {
@@ -102,17 +96,59 @@ img { max-width: 100%; height: auto; vertical-align: bottom; }
 	
 }/* end @media */
 
-@media (max-width:767px) {
+@media (min-width:480px) and (max-width:767px) {
 
-	.grid.mobile .item:nth-child(2n+1) {
+	.grid.two .item:nth-child(2n+1),
+	.grid.three .item:nth-child(2n+1) {
 		clear: left;
 	}
 	
 }/* end @media */
 
-@media (min-width:480px) and (max-width:767px) {
+@media (max-width:767px) {
 
-	.grid .item:nth-child(2n+1) {
+	.grid.mobile ,
+	.grid.four,
+	.grid.five,
+	.grid.six {
+		margin: 0 -1em;
+	}
+	
+	.grid.mobile .item,
+	.grid.four .item,
+	.grid.five .item,
+	.grid.six .item {
+		width: 50%;
+		float: left;
+		padding: 1em;	
+	}
+	
+	.grid.mobile .item:nth-child(2n+1),
+	.grid.four .item:nth-child(2n+1),
+	.grid.five .item:nth-child(2n+1),
+	.grid.six .item:nth-child(2n+1) {
+		clear: left;
+	}
+	
+
+
+	.grid.seven,
+	.grid.eight,
+	.grid.nine {
+		margin: 0 -0.5em;
+	}
+	
+	.grid.seven .item,
+	.grid.eight .item,
+	.grid.nine .item {
+		width: 33.333%;
+		float: left;
+		padding: 0.5em;	
+	}
+	
+	.grid.seven .item:nth-child(3n+1),
+	.grid.eight .item:nth-child(3n+1),
+	.grid.nine .item:nth-child(3n+1) {
 		clear: left;
 	}
 	
@@ -125,6 +161,7 @@ img { max-width: 100%; height: auto; vertical-align: bottom; }
 	}
 	
 	.grid.two .item {
+		width: 50%;
 		padding: 2em 3em;
 	}
 
@@ -144,11 +181,26 @@ img { max-width: 100%; height: auto; vertical-align: bottom; }
 		width: 16.666%;
 	}
 	
+	.grid.seven .item {
+		width: 14.285%;
+	}
+	
+	.grid.eight .item {
+		width: 12.5%;
+	}
+	
+	.grid.nine .item {
+		width: 11.111%;
+	}
+	
 	.grid.two .item:nth-child(2n+1),
 	.grid.three .item:nth-child(3n+1),
 	.grid.four .item:nth-child(4n+1),
 	.grid.five .item:nth-child(5n+1),
-	.grid.six .item:nth-child(6n+1) {
+	.grid.six .item:nth-child(6n+1),
+	.grid.seven .item:nth-child(7n+1),
+	.grid.eight .item:nth-child(8n+1),
+	.grid.nine .item:nth-child(9n+1) {
 		clear: left;
 	}
 	
@@ -234,7 +286,7 @@ img { max-width: 100%; height: auto; vertical-align: bottom; }
 .dropmenu li a {
 	text-decoration: none;
 	display: block;
-	padding: 0.75em 1em;
+	padding: 0.5em 1em;
 	white-space: nowrap;
 }
 
@@ -320,36 +372,39 @@ img { max-width: 100%; height: auto; vertical-align: bottom; }
 /* toggle
 -------------------------------------------------------------- */
 
-.toggle {
+#menu .toggle {
 	display: none;
 	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
 }
 
 @media (max-width:599px) {
 
-	.toggle {
+	#menu .toggle {
 		display: block;
 	}
 	
-	.menu-toggle.open {
+	#menu.open .toggle {
 		border-bottom: 1px solid #999;
 	}
 	
-	.menu-toggle.open:before {
+	#menu.open .toggle:before {
 		content: "Close "
 	}
 	
-	.toggle-this {
+	#menu .target {
 		display: none;
 	}
 	
-	.toggle-this.open {
+	#menu.open .target {
 		display: block;
 	}
 
 }/* end @media */
 
-.menu-toggle {
+#menu .toggle {
 	text-transform: uppercase;
 	font-size: 0.75em;
 	font-weight: 800;

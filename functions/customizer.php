@@ -21,20 +21,6 @@ function cram_theme_customizer( $wp_customize ) {
 
 
 
-	// footer text
-	$wp_customize->add_setting( 'cram_options[footer_text]', array(
-		'default'		=> 'Powered by WordPress',
-		'type'			=> 'option',
-	) );
-
-    $wp_customize->add_control( 'cram_options[footer_text]', array(
-        'label' 		=> 'Footer Text',
-        'section' 		=> 'title_tagline',
-        'type' 			=> 'text'
-    ) );
-
-
-
 	// custom logo
 	$wp_customize->add_setting( 'cram_options[logo_display]', array(
 	    'default' => 0,
@@ -55,6 +41,21 @@ function cram_theme_customizer( $wp_customize ) {
 	    'label'   => 'Upload Logo',
 	    'section' => 'title_tagline',
 	) ) );
+
+
+
+	// footer text
+	$wp_customize->add_setting( 'cram_options[footer_text]', array(
+		'default'		=> 'Powered by WordPress',
+		'type'			=> 'option',
+	) );
+
+    $wp_customize->add_control( 'cram_options[footer_text]', array(
+        'label' 		=> 'Footer Text',
+        'section' 		=> 'title_tagline',
+        'type' 			=> 'text'
+    ) );
+
 
 
 	// background color
