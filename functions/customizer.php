@@ -232,12 +232,12 @@ function tcx_customizer_css() {
 	
 ?>
 
-	 <style type="text/css">
-	     
-	     body { background-color: #<?php echo $options['background_color']; ?> }
-	     #content { background-color: #<?php echo $options['content_background_color']; ?> }
-
-	 </style>
+<style type="text/css">
+/* WP Customizer */
+body { background-color: #<?php echo $options['background_color']; ?> }
+#content { background-color: #<?php echo $options['content_background_color']; ?> }
+/* END WP Customizer */
+</style>
 	 
 <?php
 }

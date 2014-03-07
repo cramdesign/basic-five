@@ -10,7 +10,12 @@ jQuery(document).ready(function($){
 			gallery: {
 				enabled:true,
 				preload: [0,2]
-			}
+			},
+			image: {
+	            titleSrc: function(item) {
+	              return item.el.attr('title') + ' - ' + item.el.attr('data-dsc');
+	            }
+            }
 		});
 	}); 
 	

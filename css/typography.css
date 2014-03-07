@@ -136,6 +136,7 @@ blockquote {
 	padding: 2em;
 	border: 1px solid #ddd;
 	background: #eaeaea;
+	background: rgba(0,0,0,0.1);
 	font-style: italic;
 }
 
