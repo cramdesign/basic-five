@@ -13,14 +13,14 @@ jQuery(document).ready(function($){
 			},
 			image: {
 	            titleSrc: function(item) {
-	              return item.el.attr('title') + ' - ' + item.el.attr('data-dsc');
+	              return item.el.attr('title') + '<small>' + item.el.attr('data-dsc') + '</small';
 	            }
             }
 		});
 	}); 
 	
 	
-	$(".owl-carousel").owlCarousel({
+	$('.owl-carousel').owlCarousel({
 
 		navigation : true, // Show next and prev buttons
 

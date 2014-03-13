@@ -121,8 +121,16 @@ function my_post_gallery( $output, $attr) {
 			$img = wp_get_attachment_image( $id, "thumbnail");
 			$link 	= wp_get_attachment_url( $id );
 	        $figure = "<a href='$link' data-lightbox-gallery='gallery-{$instance}'";
-	        if( $cap ) $figure .= " title='$cap'";
-	        if( $dsc ) $figure .= " data-dsc='$dsc'"; 
+	        if( $cap ) {
+	        	$figure .= " title='$cap'";
+	        } else {
+		        $figure .= " title='$ttl'";
+	        }
+	        if( $dsc ) {
+		        $figure .= " data-dsc='$dsc'";
+	        } else {
+		        $figure .= " data-dsc=''";
+	        }  
 	        $figure .= ">" . $img . "</a>";        
 		}
 
