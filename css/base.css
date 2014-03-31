@@ -480,6 +480,9 @@ img {
 .gallery-columns-8 .gallery-item {
     width: 12.5%
 }
+.gallery-columns-9 .gallery-item {
+    width: 11.1111%
+}
 .gallery br {
 	display: none;
 }

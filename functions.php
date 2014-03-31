@@ -219,6 +219,45 @@ function cleaner_caption( $output, $attr, $content ) {
 
 
 
+/* Support for Easy Google Fonts.
+-------------------------------------------------------------- */
+function my_theme_egf_default_controls( $options ) {
+
+    // Here's how to remove some default controls
+    unset( $options['tt_default_heading_1'] );
+    unset( $options['tt_default_heading_2'] );
+    unset( $options['tt_default_heading_3'] );
+    unset( $options['tt_default_heading_4'] );
+    unset( $options['tt_default_heading_5'] );
+    unset( $options['tt_default_heading_6'] );
+
+    /**
+     * Here is an example of adding our own custom theme
+     * controls (the selectors used are arbitrary this
+     * would change depending on the css element that
+     * you want to control).
+     */
+    $options['basic_theme_all_headings'] = array(
+        'name'        => 'basic_theme_all_headings',
+        'title'       => 'All Heading Elements',
+        'description' => 'Changes h1, h2, h3, h4, h5, h6 site wide.',
+        'properties'  => array( 'selector' => 'h1, h2, h3, h4, h5, h6' ),
+    );
+
+    $options['basic_theme_masthead'] = array(
+        'name'        => 'basic_theme_masthead',
+        'title'       => 'Masthead Logo and Tagline',
+        'description' => 'Masthead Logo and Tagline',
+        'properties'  => array( 'selector' => '#logo a, #tagline' ),
+    );
+
+    // Return the default controls
+    return $options;
+}
+add_filter( 'tt_font_get_option_parameters', 'my_theme_egf_default_controls' );
+
+
+
 /* The End - thanks
 -------------------------------------------------------------- */
 ?>
