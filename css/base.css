@@ -357,7 +357,7 @@ img {
 	}
 	
 	.dropmenu li ul li a:before {
-		content: '\2022\00a0';
+		content: '\2022\00a0'; /* bullet space */
 	}
 
 	.dropmenu li, .dropmenu li ul {
