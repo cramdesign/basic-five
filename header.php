@@ -2,10 +2,8 @@
 <html <?php language_attributes(); ?>>
 <head>
 
-<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 <meta name="description" content="<?php wp_title(''); echo ' | '; bloginfo( 'description' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="<?php bloginfo( 'charset' ); ?>">
 
 <?php wp_head(); ?>
 
@@ -33,13 +31,12 @@
 	
 	</div><!-- row -->
 	
-	<div id="menu">
-	
-	    <h4 class="toggle">Menu</h4>
-		<nav class="target"><?php wp_nav_menu( array( 'menu' => 'Primary', 'menu_class' => 'dropmenu' ) ); ?></nav>
-	
-	</div><!-- menu -->
-
+	<nav id="menu">
+		<input type="checkbox" id="menu-toggle" class="toggle">
+		<label for="menu-toggle" class="toggle">Menu</label>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'drop menu target' )); ?>
+	</nav>
+		
 </div><!-- header -->
 
 

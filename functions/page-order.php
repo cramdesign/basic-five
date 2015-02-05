@@ -63,10 +63,13 @@ $subPageStr = mypageorder_getSubPages($parentID);
 		<input type="submit" name="btnSubPages" class="button" id="btnSubPages" value="<?php _e('View Subpages', 'mypageorder') ?>" />
 	
 	<?php endif; ?>
+	
 
-	<?php if( $parentID != "" ) : ?>
+	<?php if( $parentID ) : ?>
 
-		<h3>Current Pages - <?php echo get_the_title( $parentID ); ?></h3>
+		<h3>Current Pages - <?php echo get_the_title( $parentID );?></h3>
+
+		<?php echo mypageorder_getParentLink( $parentID ); ?>
 
 	<?php endif; ?>
 	
@@ -83,7 +86,6 @@ $subPageStr = mypageorder_getSubPages($parentID);
 	</ul>
 
 	<input type="submit" name="btnOrderPages" id="btnOrderPages" class="button-primary" value="Save Page Order" onclick="javascript:orderPages(); return true;" />
-	<?php echo mypageorder_getParentLink( $parentID ); ?>
 	<strong id="updateText"></strong>
 	<input type="hidden" id="hdnMyPageOrder" name="hdnMyPageOrder" />
 	<input type="hidden" id="hdnParentID" name="hdnParentID" value="<?php echo $parentID; ?>" />

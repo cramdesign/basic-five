@@ -160,18 +160,18 @@ body {
 /* meta
 -------------------------------------------------------------- */
 
-.meta {
+.post .meta {
 	font-size: 0.75em;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	text-align: center;
 }
 
-.meta p {
+.post .meta p {
 	display: inline-block;
 }
 
-.meta p:before {
+.post .meta p:before {
 
 	display:        inline-block;
 	font-family:    'Genericons';
@@ -187,9 +187,9 @@ body {
 	
 }
 
-.meta p.time:before 	{ content: '\f303'; }
-.meta p.comments:before { content: '\f300'; }
-.meta p.category:before { content: '\f301'; }
+.post .meta p.time:before 	{ content: '\f303'; }
+.post .meta p.comments:before { content: '\f300'; }
+.post .meta p.category:before { content: '\f301'; }
 
 .meta p + p {
 	margin-left: 1em;
@@ -268,6 +268,7 @@ figure.feature {
 
 
 
+/*
 .commentlist {
 	margin: 0;
 	padding: 0;
@@ -289,6 +290,7 @@ figure.feature {
 .form-allowed-tags {
 	display: none;
 }
+*/
 
 
 

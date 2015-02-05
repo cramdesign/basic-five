@@ -18,7 +18,7 @@
 
 <?php endwhile; ?>
 
-				<?php comments_template( '', true ); ?>
+	<?php if ( is_singular() and comments_open() ) comments_template(); ?>
 
 <?php else : ?>
 

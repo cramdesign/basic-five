@@ -229,18 +229,20 @@ function check_email( $value ) {
 function tcx_customizer_css() {
 
 	$options = get_option( 'cram_options' );
-	
-?>
 
-<style type="text/css">
-/* WP Customizer */
-body { background-color: #<?php echo $options['background_color']; ?> }
-#content { background-color: #<?php echo $options['content_background_color']; ?> }
-/* END WP Customizer */
-</style>
-	 
-<?php
+	?>
+	
+	<style type="text/css">
+	/* WP Customizer */
+	body { background-color: #<?php echo $options['background_color']; ?> }
+	#content { background-color: #<?php echo $options['content_background_color']; ?> }
+	/* END WP Customizer */
+	</style>
+		 
+	<?php
+	
 }
+
 add_action( 'wp_head', 'tcx_customizer_css' );
 
 function tcx_customizer_live_preview() {

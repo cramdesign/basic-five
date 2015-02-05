@@ -1,0 +1,107 @@
+/* Comments 
+------------------------------------------ */
+
+#comments-wrap {
+	padding: 4em 0;
+}
+
+.commentlist {
+	border-top: 1px solid rgba(0,0,0,0.3);
+}
+
+.commentlist, .commentlist .children {
+	list-style: none;
+	padding: 0;
+}
+
+.commentlist .depth-1 {
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.children li {
+	border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.comment .row {
+	padding: 4em 0;
+}
+
+.comment #respond {
+	padding: 0 0 2em 0;
+}
+
+.comment .vcard .avatar {
+	width: 60px;
+	margin-right: 1em;
+	float: left;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+.comment .vcard .meta {
+	overflow: hidden;
+	font-size: 12px;
+}
+
+.comment .vcard p {
+	margin: 0.5em 0;
+	line-height: 1;
+}
+
+
+
+#respond {
+	padding: 2em 0;
+}
+
+#respond label {
+	display: block;
+	text-transform: uppercase;
+	font-size: small;
+	font-weight: bold;
+}
+
+#reply-title small {
+	display: block;
+}
+
+#respond input:not([type="submit"]), #respond textarea {
+	width: 100%;
+}
+
+
+
+@media (min-width:800px) {
+	
+	#reply-title, .comment header { 
+		width: 30%;
+		float: left;
+		padding-right: 4em;
+	}
+	
+	#commentform, .comment article {
+		overflow: hidden;
+		padding-left: 4em;
+	}
+	
+}
+
+
+@media (min-width:960px) {
+	
+	.comment-form-author, .comment-form-email, .comment-form-url {
+		width: 32%;
+		float: left;
+	}
+	
+	.comment-form-email, .comment-form-url {
+		margin-left: 2%;
+	}
+	
+}
+
+
+.form-allowed-tags {
+	display: none;
+}
+
+
