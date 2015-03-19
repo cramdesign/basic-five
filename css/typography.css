@@ -133,8 +133,7 @@ p {
 blockquote {
 	margin: 2em 0;
 	padding: 2em;
-	border: 1px solid #ddd;
-	background: #eaeaea;
+	border: 1px solid rgba(0,0,0,0.2);
 	background: rgba(0,0,0,0.1);
 	font-style: italic;
 }

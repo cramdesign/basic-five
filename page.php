@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- page-portfolio.php -->
+<!-- page.php -->
 
 <div class="page portfolio">
 
@@ -10,24 +10,19 @@
 	
 		<?php 
 		
-		$searchpattern = '~<img [^>]* />~';
-		preg_match_all( $searchpattern, $post->post_content, $pics );
-		$count_pics = count( $pics[0] );
-	
-		if ( has_post_thumbnail() && 1 > $count_pics && !has_shortcode( $post->post_content, 'gallery' ) ) : 
+			$searchpattern = '~<img [^>]* />~';
+			preg_match_all( $searchpattern, $post->post_content, $pics );
+			$count_pics = count( $pics[0] );
 		
-			get_template_part( 'inc/content', 'feature' );
-			$class = "loop row";
+			if ( has_post_thumbnail() && 1 > $count_pics && !has_shortcode( $post->post_content, 'gallery' ) ) : 
 			
-		else :
-		
-			$class = "loop row";
+				get_template_part( 'inc/content', 'feature' );
 				
-		endif;
+			endif;
 		
 		?>
 	
-		<div class="<?php echo( $class ); ?>">
+		<div class="loop row">
 	
 			<?php get_template_part( 'inc/content', 'text' ); ?>
 	

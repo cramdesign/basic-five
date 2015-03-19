@@ -1,29 +1,43 @@
 <?php get_header(); ?>
 
-<!-- index.php -->
+<!-- single.php -->
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php
+	
+	// Start the Loop
+	if (have_posts()) : while (have_posts()) : the_post(); 
+	
+?>
 
 	<section <?php post_class() ?>>
 			
 		<div class="row">
 	
-		<?php if ( has_post_thumbnail( $post->ID ) ) get_template_part( 'inc/content', 'feature' ); ?>
+		<?php 
+			
+			if ( has_post_thumbnail( $post->ID ) ) get_template_part( 'inc/content', 'feature' );
 		
-		<?php get_template_part( 'inc/content', 'text' ); ?>
+			get_template_part( 'inc/content', 'text' ); 
+			
+		?>
 			
 		</div><!-- row -->
 	
 	</section><!-- post -->
 
-<?php endwhile; ?>
+<?php 
+	
+	endwhile;
 
-	<?php if ( is_singular() and comments_open() ) comments_template(); ?>
+		// load the comments.php file if it is needed
+		if ( comments_open() or 0 != get_comments_number() ) comments_template(); 
 
-<?php else : ?>
+	else :
 
-	<h2>Not Found</h2>
+		echo( '<h2>No posts found</h2>' );
 
-<?php endif; ?>
+	endif; 
+
+?>
 
 <?php get_footer(); ?>
