@@ -4,10 +4,14 @@
 
 	<div <?php post_class() ?>>
 
-		<?php if ( has_post_thumbnail( $post->ID ) ) get_template_part( 'inc/content', 'feature' ); ?>
-
-		<?php get_template_part( 'inc/content', 'text' ); ?>
-
+		<?php 
+			
+			if ( has_post_thumbnail( $post->ID ) ) get_template_part( 'inc/content', 'feature' );
+		
+			get_template_part( 'inc/content', 'text' ); 
+			
+		?>
+			
 	</div><!-- post -->
 		
 <?php endwhile; ?>

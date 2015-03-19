@@ -4,7 +4,7 @@
 
 <?php
 	
-	// Start the Loop
+	// start the Loop
 	if (have_posts()) : while (have_posts()) : the_post(); 
 	
 ?>
@@ -27,16 +27,11 @@
 
 <?php 
 	
-	endwhile;
+	// end the Loop
+	endwhile; endif; 
 
-		// load the comments.php file if it is needed
-		if ( comments_open() or 0 != get_comments_number() ) comments_template(); 
-
-	else :
-
-		echo( '<h2>No posts found</h2>' );
-
-	endif; 
+	// load the comments.php file if it is needed
+	if ( comments_open() or 0 != get_comments_number() ) comments_template(); 
 
 ?>
 
