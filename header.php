@@ -17,15 +17,19 @@
 
 	<div class="row">
 	
-		<?php $options = get_option('cram_options'); ?>
-		<?php if ($options['logo_display']) : ?>
+		<?php 
+			
+			$options = get_option('cram_options'); 
+			if ($options['logo_display']) : 
+			
+		?>
 		
-	    <h1 id="logo"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo $options['logo_file']; ?>"></a></h1>
+		    <h1 id="logo"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo $options['logo_file']; ?>"></a></h1>
 		
 		<?php else : ?>
 	
-	    <h1 id="logo"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
-	    <h1 id="tagline"><?php bloginfo('description'); ?></h1>
+		    <h1 id="logo"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
+		    <h1 id="tagline"><?php bloginfo('description'); ?></h1>
 	
 		<?php endif; ?>
 	
@@ -38,7 +42,5 @@
 	</nav>
 		
 </div><!-- header -->
-
-
 
 <div id="content">

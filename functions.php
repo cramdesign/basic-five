@@ -39,12 +39,14 @@ function custom_theme_features()  {
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array(
 		'comment-list',
+		'comment-form',
 		'search-form',
 		'comment-form',
 		'gallery',
+		'caption'
 	) );
-
-
+	
+	
 	// allow WordPress to control the title tag
 	add_theme_support( 'title-tag' );
 
@@ -91,10 +93,13 @@ register_sidebar(array(
 if (!function_exists('theme_scripts')) : function theme_scripts() {
 
 
-	// load comments stylesheet only if it is needed
-	if ( is_singular() && comments_open() ) wp_enqueue_style ( 'comments', get_template_directory_uri() . '/css/comments.css' );
-	// load special javascript for threaded comments
-	if ( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' );
+	// load comments stylesheet and javascript only if it is needed
+	if ( comments_open() or 0 != get_comments_number() ) :
+	
+		wp_enqueue_style ( 'comments', get_template_directory_uri() . '/css/comments.css' );
+		if ( get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' );
+		
+	endif;
 		
 	
 	// Styles

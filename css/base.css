@@ -39,13 +39,13 @@ img {
 
 	.wide .row, .wide.row { max-width: none; width: auto; margin: 0 3em; }
 
-}/* end @media */
+}
 
 @media (max-width:1024px) {
 
 	.row { width: 88%; }
 
-}/* end @media */
+}
 
 
 
@@ -88,7 +88,7 @@ img {
 		width: 100%;
 	}
 	
-}/* end @media */
+}
 
 @media (min-width:480px) and (max-width:767px) {
 
@@ -97,7 +97,7 @@ img {
 		clear: left;
 	}
 	
-}/* end @media */
+}
 
 @media (max-width:767px) {
 
@@ -124,8 +124,6 @@ img {
 		clear: left;
 	}
 	
-
-
 	.grid.seven,
 	.grid.eight,
 	.grid.nine {
@@ -146,7 +144,7 @@ img {
 		clear: left;
 	}
 	
-}/* end @media */
+}
 
 @media (min-width: 768px) {
 
@@ -198,7 +196,7 @@ img {
 		clear: left;
 	}
 	
-}/* end @media */
+}
 
 [class*='gallery'].grid .item a {
 	box-shadow: 0 0 3px rgba(0,0,0,0.05);
@@ -226,19 +224,19 @@ img {
 
 @media (min-width:600px) {
 
-	.slats .item {
+	.slats .item, .slat {
 		padding: 2em;
 		margin: 0 -2em;
 		overflow: hidden;
 	}
 	
-	.slats .item figure {
+	.slats .item figure, .slat figure {
 		width: 45%;
 		float: left;
 		margin-right: 2em;
 	}
 	
-	.slats .item article {
+	.slats .item article, .slat article {
 		padding-top: 0;
 		overflow: hidden;
 	}
@@ -249,20 +247,53 @@ img {
 		padding: 2em;
 	}
 	
-}/* end @media */
+}
 
 @media (min-width: 980px) {
 
-	.slats .item figure {
+	.slats .item figure, .slat figure {
 		width: 30%;
 		margin-right: 3em;
 	}
 	
-}/* end @media */
+}
 
 
 
 
+
+
+
+
+/* post navigation
+-------------------------------------------------------------- */
+
+.postnav {
+	font-size: 0.75em;
+	padding: 3em 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.postnav .page-numbers {
+	padding: 0.5em 0.75em;
+	border: 1px solid #ddd;
+}
+
+.postnav .page-numbers + .page-numbers {
+	margin-left: 0.5em;
+}
+
+.postnav .current {
+	border: 1px solid #ccc;
+	background-color: #eee;
+}
+
+.postnav .prev, .postnav .next {
+	border: none;
+	padding: 0.5em 0;
+}
 
 
 
@@ -295,50 +326,6 @@ img {
     width: 2.5em; height: 100%;
 }
 
-/* gallery shortcode styles
-.gallery {
-    margin: 0 -0.5em 1em;
-    overflow: hidden;
-}
-.gallery-item {
-    float: left;
-    padding: 0.5em;
-    margin: 0;
-}
-.gallery .gallery-caption {
-}
-.gallery-columns-1 .gallery-item {
-    width: 100%;
-    float: none;
-}
-.gallery-columns-2 .gallery-item {
-    width: 50%
-}
-.gallery-columns-3 .gallery-item {
-    width: 33.3333%
-}
-.gallery-columns-4 .gallery-item {
-    width: 25%
-}
-.gallery-columns-5 .gallery-item {
-    width: 20%
-}
-.gallery-columns-6 .gallery-item {
-    width: 16.6667%
-}
-.gallery-columns-7 .gallery-item {
-    width: 14.2857%
-}
-.gallery-columns-8 .gallery-item {
-    width: 12.5%
-}
-.gallery-columns-9 .gallery-item {
-    width: 11.1111%
-}
-.gallery br {
-	display: none;
-}
--------------------------------------------------------------- */
 
 
 /*------------------------------------*\
@@ -346,50 +333,63 @@ img {
 \*------------------------------------*/
 
 @media print {
+	
 	* {
 		background:transparent !important;
 		color:#000 !important;
 		box-shadow:none !important;
 		text-shadow:none !important;
 	}
+	
 	a, a:visited {
 		text-decoration:underline;
 	}
+	
 	a[href]:after {
 		content:" (" attr(href) ")";
 	}
+	
 	abbr[title]:after {
 		content:" (" attr(title) ")";
 	}
+	
 	.ir a:after,
 	a[href^="javascript:"]:after,
 	a[href^="#"]:after {
 		content:"";
 	}
+	
 	pre,blockquote {
 		border:1px solid #999;
 		page-break-inside:avoid;
 	}
+	
 	thead {
 		display:table-header-group;
 	}
+	
 	tr,img {
 		page-break-inside:avoid;
 	}
+	
 	img {
 		max-width:100% !important;
 	}
+	
 	@page {
 		margin:0.5cm;
 	}
+	
 	p, h2, h3 {
 		orphans:3;
 		widows:3;
 	}
+	
 	h2, h3 {
 		page-break-after:avoid;
 	}
-} /* end @media */
+	
+} 
 
 
 

@@ -47,6 +47,15 @@
 	line-height: 1;
 }
 
+.reply-link {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.reply-link a.comment-reply-link {
+	text-decoration: none;
+}
+
 
 
 #respond {
