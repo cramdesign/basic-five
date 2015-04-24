@@ -7,10 +7,10 @@
 	<article>
 		
 	    <header>
-			<h1 class="entry-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+			<h1 class="title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 	    </header>
 	
-		<div class="entry-content">
+		<div class="content">
 			<?php the_content(); ?>
 		</div>
 	

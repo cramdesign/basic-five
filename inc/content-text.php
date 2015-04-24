@@ -1,16 +1,20 @@
 <header>
 	
-	<?php if ( is_singular() ) : ?>
-	
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+	<?php 
 		
-	<?php else : ?>
-	
-		<h2 class="entry-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+		if ( is_singular() ) : 
+					
+			the_title( '<h1 class="title">', '</h1>' ); 
+							
+		else : 
 		
-	<?php endif; ?>
-	
-	
+			the_title( '<h2 class="title"><a href="' . get_the_permalink() . '">', '</a></h2>' );
+
+		endif;
+		
+	?>
+
+
 	<?php if ( !is_page() ) : ?>
 	
 		<div class="meta">
@@ -31,7 +35,7 @@
 	
 </header>
 
-<article class="entry-content">
+<article class="content">
 	
 	<?php the_content(); ?>
 	

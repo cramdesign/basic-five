@@ -1,11 +1,15 @@
-<div <?php post_class( 'item' ) ?>>
+<div class="item post">
+	
 	<a href="<?php the_permalink() ?>">
 		
-	<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
-		<figure class="feature"><?php the_post_thumbnail( 'thumbnail' );?></figure>
-	<?php endif; ?>
+		<?php 
+			
+			if ( has_post_thumbnail( $post->ID ) ) echo( '<figure class="feature">' . get_the_post_thumbnail( $post->ID, 'thumbnail' ) . '</figure>' );
 	
-		<h5 class="entry-title"><?php the_title(); ?></h5>
+			the_title( '<h5 class="entry-title">', '</h5>' ); 
+		
+		?>
 	
 	</a>
-</div><!-- post -->
+	
+</div><!-- item -->

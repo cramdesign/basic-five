@@ -154,7 +154,7 @@ mark {
 	font-size: 1.4em;
 }
 
-.entry-title, .widget-title {
+.entry-title, .widget-title, .title {
 	text-align: center;
 }
 

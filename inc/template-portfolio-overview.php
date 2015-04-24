@@ -13,17 +13,17 @@
 <?php if ( have_posts() && $post->post_content != "" ) : ?>
 	
 	<section>
-	<div class="row">
+		<div class="row">
+			
+			<?php while ( have_posts() ) : the_post(); ?>
+			
+				<article>
+					<div class="content"><?php the_content(); ?></div><!-- content -->
+				</article>
+			
+			<?php endwhile; ?>
 		
-	<?php while ( have_posts() ) : the_post(); ?>
-	
-		<article>
-			<div class="entry-content"><?php the_content(); ?></div><!-- entry-content -->
-		</article>
-	
-	<?php endwhile; ?>
-	
-	</div><!-- row -->
+		</div><!-- row -->
 	</section>
 	
 <?php endif; ?>
@@ -44,22 +44,26 @@
 			
 			setup_postdata( $pageChild ); 
 			
-			$children = get_pages('child_of='.$pageChild->ID);
+			$children = get_pages( 'child_of=' . $pageChild->ID );
 			$class = "item";
 			if( $children ) :
+			
 				$class .= " parent";
-				$count = count($children);
+				$count = count( $children );
+				
 			elseif( has_shortcode( $pageChild->post_content, 'gallery' ) ) :
-				$class .= " gallery"; 
+			
+				$class .= " gallery";
+				
 			endif;
 					
 			?>
 	
 			<div class="<?php echo( $class ); ?>">
-				<a href="<?php echo get_permalink($pageChild->ID); ?>">
+				<a href="<?php echo get_permalink( $pageChild->ID ); ?>">
 					<figure><?php echo get_the_post_thumbnail( $pageChild->ID, 'thumbnail' ); ?></figure>
-					<article><h5 class="entry-title"><?php echo $pageChild->post_title; ?></h5></article>
-					<p class="icon"><?php if ( $children ) echo $count . " items"; ?></p>
+					<article><h5 class="title"><?php echo $pageChild->post_title; ?></h5></article>
+					<p class="icon"><?php if ( $children ) echo( '<span>' . $count . " items</span>" ); ?></p>
 				</a>
 			</div>
 	
