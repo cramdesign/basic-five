@@ -1,6 +1,6 @@
 /* 
 	Name: drop menu 
-	Version: 1.2.2
+	Version: 1.2.4
 */
 
 .menu, .menu ul {
@@ -33,7 +33,7 @@
 	text-align: left;
 }
 
-.drop.menu ul {
+.menu ul {
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 300ms;	
@@ -42,12 +42,12 @@
 	top: 100%;
 }
 
-.drop.menu ul ul {
+.menu ul ul {
 	left: 100%;
 	top: 0;
 }
 
-.drop.menu li:hover > ul {
+.menu li:hover > ul {
 	opacity: 1;
 	visibility: visible; 
 }
@@ -58,27 +58,27 @@
 		background: transparent;
 	}
 
-	.drop.menu li.parent > a:after,
-	.drop.menu li.menu-item-has-children > a:after {
+	.menu li.parent > a:after,
+	.menu li.menu-item-has-children > a:after {
 		content: "";
 		padding-right: 1em;
 	}
 
-	.drop.menu li.parent > a:before,
-	.drop.menu li.menu-item-has-children > a:before {
+	.menu li.parent > a:before,
+	.menu li.menu-item-has-children > a:before {
 		display: block;
 		content: "\025B8";
 		position: absolute;
 		right: 1em;
 	}
 
-	.drop.menu > li.parent:hover > a:before,
-	.drop.menu > li.menu-item-has-children:hover > a:before {
+	.menu > li.parent:hover > a:before,
+	.menu > li.menu-item-has-children:hover > a:before {
 		content: "\025BE";
 	}
 
-	.drop.menu li li.parent:hover > a:before,
-	.drop.menu li li.menu-item-has-children:hover > a:before {
+	.menu li li.parent:hover > a:before,
+	.menu li li.menu-item-has-children:hover > a:before {
 		right: 0.5em;
 	}
 
@@ -90,11 +90,7 @@
 
 @media (max-width:800px) {
 
-	.drop.menu {
-/* 		background: #eee; */
-	}
-	
-	.drop.menu li {
+	.menu li {
 		display: block;
 	}
 	
@@ -102,12 +98,12 @@
 		background: rgba(0,0,0,0.1);
 	}
 	
-	.drop.menu > li > a {
+	.menu > li > a {
 		font-weight: bold;
 		border-top: 1px solid rgba(0,0,0,0.1);
 	}
 	
-	.drop.menu ul {
+	.menu ul {
 		background: none;
 		position: static;
 		visibility: visible;
@@ -115,17 +111,17 @@
 		margin-bottom: 1em;
 	}
 		
-	.drop.menu ul ul {
+	.menu ul ul {
 		margin-bottom: 0;
 		margin-left: 1em;
 	}
 	
-	.drop.menu li li a {
+	.menu li li a {
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
 	}
 	
-	.drop.menu li li a:before {
+	.menu li li a:before {
 		content: '\2022\00a0';
 	}
 

@@ -46,6 +46,7 @@
 			
 			$children = get_pages( 'child_of=' . $pageChild->ID );
 			$class = "item";
+			
 			if( $children ) :
 			
 				$class .= " parent";
@@ -62,8 +63,12 @@
 			<div class="<?php echo( $class ); ?>">
 				<a href="<?php echo get_permalink( $pageChild->ID ); ?>">
 					<figure><?php echo get_the_post_thumbnail( $pageChild->ID, 'thumbnail' ); ?></figure>
-					<article><h5 class="title"><?php echo $pageChild->post_title; ?></h5></article>
-					<p class="icon"><?php if ( $children ) echo( '<span>' . $count . " items</span>" ); ?></p>
+					<article>
+						
+						<div class="icon"><?php //if ( $children ) echo( '<span>' . $count . " items</span>" ); ?></div>
+						<h5 class="title"><?php echo $pageChild->post_title; ?></h5>
+					
+					</article>
 				</a>
 			</div>
 	

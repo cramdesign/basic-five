@@ -94,7 +94,7 @@ if (!function_exists('theme_scripts')) : function theme_scripts() {
 
 
 	// load comments stylesheet and javascript only if it is needed
-	if ( comments_open() or 0 != get_comments_number() ) :
+	if ( comments_open() or get_comments_number() ) :
 	
 		wp_enqueue_style ( 'comments', get_template_directory_uri() . '/css/comments.css' );
 		if ( get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' );
