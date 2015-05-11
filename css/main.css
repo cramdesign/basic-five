@@ -229,24 +229,24 @@ body {
 
 
 .post-gallery .item .icon:before {
-	content: 		'\f473';
-	display:        inline-block;
-	font-family:    'Genericons';
-	font-size:      2em;
-	font-style:     normal;
-	font-weight:    normal;
-	font-variant:   normal;
-	line-height:    1;
+	content: '\f473';
+	display: inline-block;
+	font-family: 'Genericons';
+	font-size: 2em;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
 	vertical-align: middle;
 	-webkit-font-smoothing: antialiased;
 }
 
 .post-gallery .parent.item .icon:before {
-	content: 		'\f460';
+	content: '\f460';
 }
 
 .post-gallery .gallery.item .icon:before {
-	content: 		'\f103';
+	content: '\f103';
 }
 
 #portfolio .item img {

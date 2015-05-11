@@ -1,28 +1,61 @@
-/* Cram Base CSS 1.07
+/* Cram Base CSS 1.0.8
 -------------------------------------------------------------- */
 
 
 
-/* The good box model
--------------------------------------------------------------- */
-*,
-*:after,
-*:before {
-	box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	text-rendering:optimizeLegibility;
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 
 
-/* Make images sorta responsive
+/* Make images responsive
 -------------------------------------------------------------- */
 img { 
 	max-width: 100%;
 	height: auto;
 	vertical-align: bottom;
+}
+
+
+
+/* WP stuff 
+-------------------------------------------------------------- */
+
+.screen-reader-text {
+	display: none;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 1em;
+}
+
+.alignright {
+	float: right;
+	margin-left: 1em;
+	margin-bottom: 1em;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
@@ -260,15 +293,10 @@ img {
 
 
 
-
-
-
-
-
 /* post navigation
 -------------------------------------------------------------- */
 
-.postnav {
+.nav-links {
 	font-size: 0.75em;
 	padding: 3em 0;
 	text-transform: uppercase;
@@ -276,25 +304,33 @@ img {
 	text-align: center;
 }
 
-.postnav .page-numbers {
+.nav-links .page-numbers {
 	padding: 0.5em 0.75em;
 	border: 1px solid #ddd;
 }
 
-.postnav .page-numbers + .page-numbers {
+.nav-links .page-numbers + .page-numbers {
 	margin-left: 0.5em;
 }
 
-.postnav .current {
+.nav-links .current {
 	border: 1px solid #ccc;
 	background-color: #eee;
 }
 
-.postnav .prev, .postnav .next {
+.nav-links .prev, .nav-links .next {
 	border: none;
 	padding: 0.5em 0;
 }
 
+.nav-previous, .nav-next {
+	display: inline-block;
+	padding: 1em;
+}
+
+.nav-next {
+	border-left: 1px solid #ccc;
+}
 
 
 
