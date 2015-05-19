@@ -1,8 +1,6 @@
 /* Cram Base CSS 1.0.8
 -------------------------------------------------------------- */
 
-
-
 html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -25,6 +23,7 @@ html {
 
 /* Make images responsive
 -------------------------------------------------------------- */
+
 img { 
 	max-width: 100%;
 	height: auto;
@@ -60,10 +59,11 @@ img {
 
 
 
-/* Nicolas Gallagher's micro clearfix
+/* micro clearfix
 -------------------------------------------------------------- */
+
 .row { width: 80%; max-width: 1000px; margin: 0 auto; }
-.row:before, .row:after, .clear:before, .clear:after, .grid:before, .grid:after { content:""; display:table; }
+.row:before, .row:after, .clear:before, .clear:after, .grid:before, .grid:after { content:''; display:table; }
 .row:after, .clear:after, .grid:after { clear: both; }
 .row, .clear, .grid { zoom: 1; position: relative; }
 .row .row { width: auto; max-width: none; }
@@ -336,6 +336,7 @@ img {
 
 /* Search Form
 -------------------------------------------------------------- */
+
 .searchform {
     padding: 0 2.5em 0 0;
     overflow: hidden;
