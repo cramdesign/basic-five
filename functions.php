@@ -15,9 +15,6 @@ function prefix_remove_menu_item_whitespace( $items ) {
 require 'functions/customizer.php';
 require 'functions/breadcrumb.php';
 require 'functions/page-order.php';
-require 'functions/gallery-output.php';
-//require 'functions/simple-page-ordering/simple-page-ordering.php';
-//require 'functions/meta_box_framework.php';
 
 
 
@@ -30,6 +27,7 @@ function custom_theme_features()  {
 	register_nav_menu( 'social',  __( 'Social',  'framework' ) );
 
 
+	// featured images
 	add_theme_support( 'post-thumbnails' );
 
 
@@ -94,11 +92,11 @@ if (!function_exists('theme_scripts')) : function theme_scripts() {
 
 
 	// load comments stylesheet and javascript only if it is needed
-	if ( comments_open() or get_comments_number() ) :
-	
-		wp_enqueue_style ( 'comments', get_template_directory_uri() . '/css/comments.css' );
-		if ( get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' );
+	if ( is_singular() and ( comments_open() or get_comments_number() ) ) : 
 		
+			wp_enqueue_style ( 'comments', get_template_directory_uri() . '/css/comments.css' );
+			if ( comments_open() and get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
+			
 	endif;
 		
 	
@@ -108,6 +106,10 @@ if (!function_exists('theme_scripts')) : function theme_scripts() {
 	wp_enqueue_style( 'menu', get_template_directory_uri() . '/css/menu.css' );
 	wp_enqueue_style( 'type', get_template_directory_uri() . '/css/typography.css' );
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.css' );
+
+
+	// load style.css only if this is a child theme
+	if ( is_child_theme() ) wp_enqueue_style ( 'style', get_stylesheet_directory_uri() . '/style.css' );
 
 
 } endif;
@@ -183,18 +185,22 @@ add_filter('user_contactmethods', 'extra_contact_info');
 /* Add thumbnails to page list admin
 -------------------------------------------------------------- */
 function cram_add_thumbnail_column( $columns ) {
+	
 	$column_thumb = array( 'thumbnail' => __('Thumbnail','bean' ) );
 	$columns = array_slice( $columns, 0, 2, true ) + $column_thumb + array_slice( $columns, 1, NULL, true );
 	return $columns;
+	
 }
 
 function cram_display_thumbnail_column( $column ) {
+	
 	global $post;
 	switch ( $column ) {
 		case 'thumbnail':
 			echo get_the_post_thumbnail( $post->ID, array(35, 35) );
 			break;
 	}
+	
 }
 
 add_filter('manage_pages_columns', 'cram_add_thumbnail_column', 5);
@@ -256,6 +262,7 @@ function my_theme_egf_default_controls( $options ) {
      * would change depending on the css element that
      * you want to control).
      */
+    
     $options['basic_theme_all_headings'] = array(
         'name'        => 'basic_theme_all_headings',
         'title'       => 'All Heading Elements',
@@ -272,11 +279,10 @@ function my_theme_egf_default_controls( $options ) {
 
     // Return the default controls
     return $options;
+    
 }
 add_filter( 'tt_font_get_option_parameters', 'my_theme_egf_default_controls' );
 
 
 
-/* The End - thanks
--------------------------------------------------------------- */
-?>
+/* The End - thanks */

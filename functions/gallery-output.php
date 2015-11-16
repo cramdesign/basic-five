@@ -2,8 +2,11 @@
 
 /* Custom gallery output
 -------------------------------------------------------------- */
-add_filter( 'post_gallery', 'my_post_gallery', 10, 2 );
-function my_post_gallery( $output, $attr) {
+
+//add_filter( 'post_gallery', 'theme_post_gallery', 10, 2 );
+
+function theme_post_gallery( $output, $attr ) {
+	
     global $post, $wp_locale;
 
     static $instance = 0;
@@ -11,9 +14,10 @@ function my_post_gallery( $output, $attr) {
     
     // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
     if ( isset( $attr['orderby'] ) ) {
+	    
         $attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
-        if ( !$attr['orderby'] )
-            unset( $attr['orderby'] );
+        if ( !$attr['orderby'] ) unset( $attr['orderby'] );
+        
     }
 
     extract(shortcode_atts(array(
@@ -27,6 +31,7 @@ function my_post_gallery( $output, $attr) {
     ), $attr));
 
     $id = intval($id);
+    
     if ( 'RAND' == $order ) $orderby = 'none';
 
     if ( !empty($include) ) {
@@ -50,7 +55,7 @@ function my_post_gallery( $output, $attr) {
 
     }
 
-    if ( empty($attachments) ) return '';
+    if ( empty( $attachments ) ) return '';
 
     if ( is_feed() ) {
     
@@ -61,7 +66,7 @@ function my_post_gallery( $output, $attr) {
         
     }
 
-    $columns = intval($columns);
+    $columns = intval( $columns );
     
 	switch( $columns ) {
 		

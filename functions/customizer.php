@@ -44,6 +44,7 @@ function cram_theme_customizer( $wp_customize ) {
 
 
 
+/*
 	// footer text
 	$wp_customize->add_setting( 'cram_options[footer_text]', array(
 		'default'		=> 'Powered by WordPress',
@@ -55,6 +56,7 @@ function cram_theme_customizer( $wp_customize ) {
         'section' 		=> 'title_tagline',
         'type' 			=> 'text'
     ) );
+*/
 
 
 
@@ -215,14 +217,11 @@ function check_number( $value ) {
     return ( 0 < $value ) ? $value : null;
 }
 
+
+
 function check_email( $value ) {
     return ( is_email( $value ) ) ? $value : null;
 }
-
-
-
-/* 
------------------------------------------------------------- */
 
 
 
@@ -233,10 +232,12 @@ function tcx_customizer_css() {
 	?>
 	
 	<style type="text/css">
-	/* WP Customizer */
-	body { background-color: #<?php echo $options['background_color']; ?> }
-	#content { background-color: #<?php echo $options['content_background_color']; ?> }
-	/* END WP Customizer */
+		
+		/* WP Customizer */
+		body { background-color: #<?php echo $options['background_color']; ?> }
+		#content { background-color: #<?php echo $options['content_background_color']; ?> }
+		/* END WP Customizer */
+		
 	</style>
 		 
 	<?php

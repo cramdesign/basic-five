@@ -1,7 +1,6 @@
 <?php
 	
-// comments.php version 1.0.1
-
+// comments.php version 1.0.2
 
 
 // This function creates the actual comment
@@ -106,8 +105,7 @@ if ( post_password_required() ) return;
 ?>
 
 <div id="comments-wrap">		
-<div class="row">
-<div id="comments" class="comments-area">
+<div id="comments" class="row comments-area">
 
 	<?php if ( have_comments() ) : ?>
 
@@ -145,7 +143,6 @@ if ( post_password_required() ) return;
 
 	<?php comment_form(); ?>
 
-</div><!-- #comments .comments-area -->
 </div><!-- row -->
 </div><!-- comments-wrap -->
 

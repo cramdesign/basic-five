@@ -6,8 +6,8 @@
 
 <div id="footer">
 <div class="row">
-
-	<h4><?php echo $options['footer_text']; ?></h4>
+	
+	<h4><?php bloginfo( 'description' ); ?></h4>
 
     <nav><?php if ( has_nav_menu( 'social' ) ) wp_nav_menu( array( 'menu' => 'Social' ) ); ?></nav>
 

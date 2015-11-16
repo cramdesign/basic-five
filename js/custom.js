@@ -3,24 +3,24 @@
 
 jQuery(document).ready(function($){
 
-	$('.gallery').each(function() { // the containers for all your galleries
-		$(this).magnificPopup({
-			delegate: '.item a', // the selector for gallery item
+	$( '.gallery' ).each(function() { // the containers for all your galleries
+		$( this ).magnificPopup({
+			delegate: '.gallery-item a', // the selector for gallery item
 			type: 'image',
 			gallery: {
 				enabled:true,
 				preload: [0,2]
 			},
 			image: {
-	            titleSrc: function(item) {
-	              return item.el.attr('title') + '<small>' + item.el.attr('data-dsc') + '</small';
+	            titleSrc: function( item ) {
+	              return item.el.attr( 'title' ) + '<small>' + item.el.attr( 'data-dsc' ) + '</small';
 	            }
             }
 		});
 	}); 
 	
 	
-	$('.owl-carousel').owlCarousel({
+	$( '.gallery-columns-1' ).owlCarousel({
 
 		navigation : true, // Show next and prev buttons
 

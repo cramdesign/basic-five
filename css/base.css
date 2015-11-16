@@ -243,6 +243,100 @@ img {
 
 
 
+/* WordPress Gallery styles
+-------------------------------------------------------------- */
+
+.gallery {
+	margin-left: -0.5em;
+	margin-right: -0.5em;
+}
+
+.gallery:before, .gallery:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.gallery img {
+	width: 100%;
+	vertical-align: bottom;
+}
+
+.gallery > * {
+	margin: 0;
+	float: left;
+	width: 50%;
+	padding: 0.5em;
+	position: relative;
+}
+
+.gallery-columns-1 > * {
+    width: 100%;
+    float: none;
+}
+
+@media (min-width:600px) {
+
+	.gallery-columns-2 > * {
+		width: 50%;
+	}
+	
+	.gallery-columns-3 > * {
+		width: 33.333%;
+	}
+	
+	.gallery-columns-4 > * {
+		width: 25%;
+	}
+	
+	.gallery-columns-5 > * {
+	    width: 20%
+	}
+	
+	.gallery-columns-6 > * {
+	    width: 16.6667%
+	}
+	
+	.gallery-columns-7 > * {
+	    width: 14.2857%
+	}
+	
+	.gallery-columns-8 > * {
+	    width: 12.5%
+	}
+	
+	.gallery-columns-9 > * {
+	    width: 11.1111%
+	}
+	
+	.gallery-columns-2 > :nth-child(2n+1),
+	.gallery-columns-3 > :nth-child(3n+1),
+	.gallery-columns-4 > :nth-child(4n+1),
+	.gallery-columns-5 > :nth-child(5n+1),
+	.gallery-columns-6 > :nth-child(6n+1),
+	.gallery-columns-7 > :nth-child(7n+1),
+	.gallery-columns-8 > :nth-child(8n+1),
+	.gallery-columns-9 > :nth-child(9n+1) {
+		clear: left;
+	}
+
+}
+
+@media (max-width:600px) {
+	
+	.gallery > :nth-child(2n+1) {
+		clear: left;
+	}
+	
+}
+
+.gallery-caption {
+	font-size: 12px;
+	text-align: center;
+}
+
+
+
 /* Slats 
 -------------------------------------------------------------- */
 
